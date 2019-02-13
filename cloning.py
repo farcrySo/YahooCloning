@@ -83,7 +83,7 @@ def defense():
                 #Author: Zen-Oh-Sama
                 lone = 24 - (len(vuln))
                 namel = lone * " "
-                print "\033[36m| " + wrna + z['email'] + eml + "\033[36m|  " + wrne + vuln + namel + " \033[36m|"
+                print "\033[36m| " + wrna + z['email'] + eml + "\033[36m|  " + wrne + vuln + namel + "\033[36m|"
             else:
                 pass
         except KeyError:
