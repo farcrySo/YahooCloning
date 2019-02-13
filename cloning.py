@@ -69,6 +69,21 @@ def defense():
                 lone = 24 - (len(vuln))
                 namel = lone * " "
                 print "\033[36m| " + wrna + z['email'] + eml + "\033[36m| " + wrne + vuln + namel + " \033[36m|"
+            elif 'hotmail' in cari:
+                url = ("http://apilayer.net/api/check?access_key=7a58ece2d10e54d09e93b71379677dbb&email=" + z['email'] + "&smtp=1&format=1")
+                cek = json.loads(requests.get(url).text)
+                if cek['smtp_check'] == 0:
+                    vuln = 8*" " + "\033[32mVuln"
+
+                else:
+                    vuln = 5*" " + "\033[31mNot Vuln"
+                lean = 30 - (len(z['email']))
+                eml = lean * " "
+                #Name Len
+                #Author: Zen-Oh-Sama
+                lone = 24 - (len(vuln))
+                namel = lone * " "
+                print "\033[36m| " + wrna + z['email'] + eml + "\033[36m|  " + wrne + vuln + namel + " \033[36m|"
             else:
                 pass
         except KeyError:
